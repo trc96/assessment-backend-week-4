@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 let goals = [];
-let globalID = 1
+let globalID = 0
 
 app.use(cors());
 
@@ -59,6 +59,7 @@ app.post('/api/goals', (req, res) => {
   goals.push(newGoal)
   res.status(200).send(goals)
   globalID ++
+  // console.log(globalID)
 });
 
 app.put('/api/goals/:id', (req, res) => {
@@ -66,15 +67,20 @@ app.put('/api/goals/:id', (req, res) => {
   let { type } = req.body;
 
   let index = goals.findIndex(goal => goal.id === +id)
-
-  if (goals[index] === 0 && type === 'udpate') {
-    goal[index].goal += "Completed!"
+  // let goal = goals[index].value
+  
+  if (goals[index]=== 0 && type === 'update') {
+    // console.log(globalID)
+    goals[index].goal = "Completed!"
+    res.status(200).send(goals)
   } else if (type === 'update') {
-    goals[index].goal += "Completed!"
+    goals[index].goal = "Completed!"
+    res.status(200).send(goals)
   } else {
-    res.status(400)
+    res.status(400).send(goals)
+    console.log(globalID)
   }
-})
+});
 
 
 app.listen(4000, () => console.log("Server running on 4000"));

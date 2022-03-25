@@ -17,14 +17,14 @@ const updateGoal = (id, type) => axios.put(`${baseURL}/${id}`, { type }).then(go
 function submitHandler(e) {
     e.preventDefault()
 
-    let goal = document.querySelector('#goal')
+    let newGoal = document.querySelector('#goal')
 
     let bodyObj = {
-        goal: goal.value
+        goal: newGoal.value
     }
 
     createGoal(bodyObj)
-    goal.value = ''
+    newGoal.value = ''
 }
 
 function createGoalCard(goal) {
@@ -33,7 +33,7 @@ function createGoalCard(goal) {
 
     goalCard.innerHTML = `<p class="goal">${goal.goal}</p>
     <div class="btns-container">
-        <button onclick="updateGoal(${goal.id})">update</button>
+        <button onclick="updateGoal(${goal.id}, 'update')">update</button>
         <button onclick="deleteGoal(${goal.id})">delete</button>
     </div>
     `
