@@ -1,0 +1,54 @@
+.bigger-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 20vh;
+    height: 10vh;
+    background-color: coral;
+    font-size: x-large;
+    color: azure;
+    border-radius: 5vh;
+    padding: 5%;
+}
+
+h2 {
+   font-size: xx-large
+}
+
+img {
+    display: flex;
+    padding-bottom: 3vh;
+    width: 35vh;
+    height: auto;
+}
+
+.bigger-input {
+    width: auto;
+    height: 5vh;
+    font-size: larger;
+    border-radius: 5vh;
+}
+
+#goal-text-box {
+    border-color: coral;
+    background-color: azure;
+}
+
+#goal-submit-button {
+    background-color: coral;
+    color: azure;
+    font-weight: bold;
+}
+
+.goal-card {
+    background-color: coral;
+    width: 300px;
+    margin: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}

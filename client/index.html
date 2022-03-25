@@ -2,9 +2,22 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <link rel="stylesheet" href="./styles.css">
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
+    <button class="bigger-button" id="complimentButton">Get a compliment</button>
+    <button class="bigger-button" id="fortuneButton">Get a fortune</button>
+    <h2>Don't let your dreams be dreams!</h2>
+    <img src="https://c.tenor.com/E9WOPQYSdFMAAAAd/do-it-dont-let-your-dreams-be-dreams.gif" alt="Shia LaBeouf's just do it video">
+    
+    <form>
+      <input class="bigger-input" id="goal" type="text" placeholder="Enter your goals here!"/>
+      <button class="bigger-input" id="goal-submit-button">Submit</button>
+      <section id="goal"></section>
+    </form>
+
+    <section id="goals-container"></section>
+    
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
@@ -16,5 +29,15 @@
             });
       };
     </script>
+    <script>
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+    <script src="./main.js"></script>
   </body>
 </html>
